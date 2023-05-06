@@ -1,22 +1,28 @@
 package com.study.main;
 
 public class MemoParsing implements Chart {
-  String[][] table;
+	String[][] table;
 	int curRow;
 	int curCol;
-  
+
 	public MemoParsing() {
 		table = new String[50][50];
 		curRow = 0;
 		curCol = 0;
 	}
 
-
 	@Override
 	public void insertCommand(String[] s) {
-		for (int i = 0; i < s.length; i++) {
-			if (s[i].contains(" "))
-				move(s[i]);
+		for (String cmd : s) {
+			if (cmd.startsWith("DELETE")) {
+				delete();
+			} else if (cmd.startsWith("PRINT")) {
+				print();
+			} else if (cmd.startsWith("'")) {
+				input(cmd);
+			} else {
+				move(cmd);
+			}
 		}
 	}
 
@@ -65,15 +71,16 @@ public class MemoParsing implements Chart {
 			goRight(number);
 		} else if (where.equals("u")) {
 			goUp(number);
-		} else if (where.equals("d")){
+		} else if (where.equals("d")) {
 			goDown(number);
 		}
 	}
+
 	@Override
 	public void delete() {
 		table[curRow][curCol] = null;
 	}
-  
+
 	@Override
 	public void print() {
 		if (table[curRow][curCol] == null) {
@@ -82,7 +89,7 @@ public class MemoParsing implements Chart {
 			System.out.println(table[curRow][curCol]);
 		}
 	}
-  
+
 	@Override
 	public void move(String s) {
 		String[] c = s.split(" ");
@@ -100,12 +107,10 @@ public class MemoParsing implements Chart {
 		moveTo(where, number);
 	}
 
-	
-
 	@Override
 	public void input(String s) {
 
-    table[curRow][curCol] = s.replace("'", "");
+		table[curRow][curCol] = s.replace("'", "");
 	}
 
 }
