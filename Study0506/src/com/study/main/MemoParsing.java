@@ -11,6 +11,7 @@ public class MemoParsing implements Chart {
 		curCol = 0;
 	}
 
+
 	@Override
 	public void insertCommand(String[] s) {
 		for (int i = 0; i < s.length; i++) {
@@ -68,6 +69,24 @@ public class MemoParsing implements Chart {
 			goDown(number);
 		}
 	}
+	@Override
+	public void delete() {
+		table[curRow][curCol] = null;
+	}
+	@Override
+	public void input(String s) {
+		
+	}
+	@Override
+	public void move(String s) {
+		
+	}
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 	@Override
 	public void move(String s) {
