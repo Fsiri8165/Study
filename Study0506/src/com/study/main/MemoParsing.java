@@ -23,6 +23,7 @@ public class MemoParsing implements Chart {
 			} else {
 				move(cmd);
 			}
+//			showChart();
 		}
 	}
 
@@ -111,6 +112,16 @@ public class MemoParsing implements Chart {
 	public void input(String s) {
 
 		table[curRow][curCol] = s.replace("'", "");
+	}
+	public void showChart() {
+		System.out.printf("%d, %d\n", curRow, curCol);
+		for (int i = 0; i < 5; i++) {
+			for (int j = 0; j < 5; j++) {
+				System.out.print(table[i][j] + ",");
+			}
+			System.out.println();
+		}
+		System.out.println("--------------------------------");
 	}
 
 }

@@ -29,13 +29,9 @@ public class CMain {
 	}
 	
 	public static void main(String[] args) {
-		String[] p = ReadFile("C:\\Users\\신용대\\Desktop\\TestCase\\Level1\\ex_lv1_tc1.txt");
-//		Chart c = ;
-		for (String s : p) {
-//			c.insertCommand(p);
-		}
-		MemoParsing m = new MemoParsing();
-		m.test();
+		String[] p = ReadFile("C:\\Users\\신용대\\Desktop\\TestCase\\Level1\\ex_lv1_tc4.txt");
+		Chart c = new MemoParsing();
+		c.insertCommand(p);
 	}
 	
 }
