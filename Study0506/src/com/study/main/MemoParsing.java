@@ -75,6 +75,15 @@ public class MemoParsing implements Chart {
 	}
   
 	@Override
+	public void print() {
+		if (table[curRow][curCol] == null) {
+			System.out.println("EMPTY");
+		} else {
+			System.out.println(table[curRow][curCol]);
+		}
+	}
+  
+	@Override
 	public void move(String s) {
 		String[] c = s.split(" ");
 		int number = 1;
@@ -91,13 +100,11 @@ public class MemoParsing implements Chart {
 		moveTo(where, number);
 	}
 
-	@Override
-	public void print() {
-
-	}
+	
 
 	@Override
 	public void input(String s) {
+
     table[curRow][curCol] = s.replace("'", "");
 	}
 
