@@ -1,10 +1,10 @@
 package com.study.main;
 
 public class MemoParsing implements Chart {
-	String[][] table;
+  String[][] table;
 	int curRow;
 	int curCol;
-
+  
 	public MemoParsing() {
 		table = new String[50][50];
 		curRow = 0;
@@ -73,21 +73,7 @@ public class MemoParsing implements Chart {
 	public void delete() {
 		table[curRow][curCol] = null;
 	}
-	@Override
-	public void input(String s) {
-		
-	}
-	@Override
-	public void move(String s) {
-		
-	}
-	@Override
-	public void print() {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
+  
 	@Override
 	public void move(String s) {
 		String[] c = s.split(" ");
@@ -106,18 +92,13 @@ public class MemoParsing implements Chart {
 	}
 
 	@Override
-	public void delete() {
-
-	}
-
-	@Override
 	public void print() {
 
 	}
 
 	@Override
 	public void input(String s) {
-
+    table[curRow][curCol] = s.replace("'", "");
 	}
 
 }
