@@ -34,6 +34,8 @@ public class CMain {
 		for (String s : p) {
 //			c.insertCommand(p);
 		}
+		MemoParsing m = new MemoParsing();
+		m.test();
 	}
 	
 }
