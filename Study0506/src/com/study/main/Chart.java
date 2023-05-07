@@ -9,4 +9,6 @@ public interface Chart {
 	void delete();
 	void print();
 	void input(String s);
+	void replace(String s);
+	void mode(String s);
 }

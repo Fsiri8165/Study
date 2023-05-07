@@ -22,16 +22,18 @@ public class CMain {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
-		}
-		finally {
-			try {br.close();} catch (IOException e) {}
+		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+			}
 		}
 	}
-	
+
 	public static void main(String[] args) {
-		String[] p = ReadFile("C:\\Users\\신용대\\Desktop\\TestCase\\Level1\\ex_lv1_tc4.txt");
+		String[] p = ReadFile("C:\\Users\\신용대\\Desktop\\TestCase\\Level3\\ex_lv3_tc4.txt");
 		Chart c = new MemoParsing();
 		c.insertCommand(p);
 	}
-	
+
 }
